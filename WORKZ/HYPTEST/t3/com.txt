@@ -1,0 +1,2 @@
+uv pip install slither-analyzer
+pip install slither-analyzer

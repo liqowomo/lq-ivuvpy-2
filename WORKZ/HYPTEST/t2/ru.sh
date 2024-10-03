@@ -41,8 +41,9 @@ COMM2: $COMM2
 # Exedcuting Hyperfine 
 hyper() {
     hyperfine \
+    -u microsecond \
     -N \
-    --warmup 10 \
+    --warmup 20 \
     "$COMM1" \
     "$COMM2" \
     --export-json "$DIR"/run.json \

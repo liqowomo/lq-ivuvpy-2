@@ -1,11 +1,10 @@
 // main function
 
-mod utils;
+mod ban;
 
-use utils::*;
+use ban::*;
 
 fn main() {
     println!("Hello, world!");
-
     ut11();
 }

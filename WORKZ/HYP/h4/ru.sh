@@ -8,11 +8,12 @@ set -o pipefail
 # Colors
 mag1='\e[35m'
 
-# Ececuting commands
+# Reports Directory 
+DIR="reports"
 
+# Ececuting commands
 main() {
     banner
-    DIR="reports"
     chk_dir "$DIR"
     hyper
     plot
@@ -28,13 +29,15 @@ hyper() {
     --warmup 10 \
     "$COMM1" \
     "$COMM2" \
-    --export-json report/run.json \
-    --export-markdown report/run.md 
+    --export-json "$DIR"/run.json \
+    --export-markdown "$DIR"/run.md 
 }
 
 # Make Boxplot
 plot() {
-     ./p_w.py --title PantySmells report/run.json -o report/run_plot.png
+     ./p_w.py  \
+     --title "$COMM1 vs $COMM2" \
+     "$DIR"/run.json -o "$DIR"/run_plot.png
 }
 
 # Banner function
@@ -53,8 +56,6 @@ chk_dir() {
     echo "Directory $1 already exists."
   fi
 }
-
-
 
 # Execute main
 main

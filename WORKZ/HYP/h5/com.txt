@@ -1,0 +1,2 @@
+eza -ls
+ls -al

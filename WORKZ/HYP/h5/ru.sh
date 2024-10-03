@@ -7,6 +7,8 @@ set -o pipefail
 
 # Colors
 mag1='\e[35m'
+gr1='\e[32;1m'
+nc='\e[0m'
 
 # Reports Directory 
 DIR="reports"
@@ -18,6 +20,16 @@ main() {
     hyper
     plot
 }
+
+# Reading commands from com.txt
+COMM1=$(head -1 com.txt)
+COMM2=$(tail -1 com.txt)
+
+# Use the commands
+printf "$gr1
+COMM1: $COMM1
+COMM2: $COMM2
+"
 
 COMM1="ls"
 COMM2="eza"
@@ -43,8 +55,10 @@ plot() {
 # Banner function
 banner() {
     printf "$mag1 
-Plot Generation Test
-"
+---
+Comparing $COMM1 and $COMM2
+---
+$nc"
 }
 
 # Directory Check 

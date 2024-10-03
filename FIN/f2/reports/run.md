@@ -1,4 +1,4 @@
-| Command | Mean [µs] | Min [µs] | Max [µs] | Relative |
+| Command | Mean [ms] | Min [ms] | Max [ms] | Relative |
 |:---|---:|---:|---:|---:|
-| `uv pip install slither-analyzer` | 10142.1 ± 2546.2 | 8480.2 | 35161.2 | 1.00 |
-| `pip install slither-analyzer` | 950510.9 ± 122641.7 | 824875.9 | 1177478.0 | 93.72 ± 26.45 |
+| `uv pip install slither-analyzer` | 11.1 ± 2.5 | 8.4 | 21.2 | 1.00 |
+| `pip install slither-analyzer` | 988.2 ± 212.0 | 836.9 | 1489.7 | 88.75 ± 27.40 |

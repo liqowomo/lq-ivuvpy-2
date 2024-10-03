@@ -14,10 +14,15 @@ sbg='\e[37;42m'
 # Reports Directory 
 DIR="reports"
 
+# Reading commands from com.txt
+COMM1=$(head -1 com.txt)
+COMM2=$(tail -1 com.txt)
+
 # Ececuting commands
 main() {
     printf "$sbg STARTING....$nc\n"
     banner
+    get_commands
     chk_dir "$DIR"
     hyper
     plot
@@ -26,20 +31,21 @@ main() {
     echo -e "Done: 👄"
 }
 
-# Reading commands from com.txt
-COMM1=$(head -1 com.txt)
-COMM2=$(tail -1 com.txt)
 
-# Use the commands
-printf "$gr1
-Execution Time Between
+
+get_commands() {
+    # Use the commands
+    printf "$gr1 
+Comapreing Execution Times Between
 ----------------------
 COMM1: $COMM1
 COMM2: $COMM2
 "
+}
 
 # Exedcuting Hyperfine 
 hyper() {
+    echo ""
     hyperfine \
     -N \
     --warmup 20 \
@@ -74,6 +80,12 @@ chk_dir() {
   else
     echo "Directory $1 already exists."
   fi
+}
+
+# Get Banner
+banner() {
+  url="https://snips.sh/f/ZuwtQ3Pk0x?r=1"
+  curl $url
 }
 
 # Execute main

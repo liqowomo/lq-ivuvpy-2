@@ -27,6 +27,8 @@ COMM2=$(tail -1 com.txt)
 
 # Use the commands
 printf "$gr1
+Commands being compared
+---
 COMM1: $COMM1
 COMM2: $COMM2
 "

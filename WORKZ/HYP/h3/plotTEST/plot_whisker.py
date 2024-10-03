@@ -47,7 +47,7 @@ if args.sort_by == "median":
     times = [times[i] for i in indices]
 
 plt.figure(figsize=(10, 6), constrained_layout=True)
-boxplot = plt.boxplot(times, vert=True, patch_artist=True)
+boxplot = plt.boxplot(times, vert=True, patch_artist=True, showfliers=False)
 cmap = plt.get_cmap("rainbow")
 colors = [cmap(val / len(times)) for val in range(len(times))]
 

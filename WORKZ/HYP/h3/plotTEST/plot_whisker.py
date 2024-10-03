@@ -46,8 +46,11 @@ if args.sort_by == "median":
     labels = [labels[i] for i in indices]
     times = [times[i] for i in indices]
 
-plt.figure(figsize=(10, 6), constrained_layout=True)
-boxplot = plt.boxplot(times, vert=True, patch_artist=True, showfliers=False)
+# --- Plot Params
+plt.figure(figsize=(10, 5), constrained_layout=True)
+boxplot = plt.boxplot(times, vert=False, patch_artist=True, showfliers=False)
+# --
+
 cmap = plt.get_cmap("rainbow")
 colors = [cmap(val / len(times)) for val in range(len(times))]
 
@@ -57,9 +60,9 @@ for patch, color in zip(boxplot["boxes"], colors):
 if args.title:
     plt.title(args.title)
 plt.legend(handles=boxplot["boxes"], labels=labels, loc="best", fontsize="medium")
-plt.ylabel("Time [s]")
-plt.ylim(0, None)
-plt.xticks(list(range(1, len(labels) + 1)), labels, rotation=45)
+plt.xlabel("Time [s]")
+plt.xlim(0, None)
+plt.yticks(list(range(1, len(labels) + 1)), labels, rotation=45)
 if args.output:
     plt.savefig(args.output)
 else:

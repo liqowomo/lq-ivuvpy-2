@@ -27,6 +27,14 @@ hyper() {
     ./plot
 }
 
+# Male plot 
+
+plot() {
+    mkdir plots 
+    cp *.json plots
+    
+}
+
 
 # Execute main
 main

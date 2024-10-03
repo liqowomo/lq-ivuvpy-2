@@ -9,16 +9,21 @@ set -o pipefail
 mag1='\e[35m'
 gr1='\e[32;1m'
 nc='\e[0m'
+sbg='\e[37;42m'
 
 # Reports Directory 
 DIR="reports"
 
 # Ececuting commands
 main() {
+    printf "$sbg STARTING....$nc\n"
     banner
     chk_dir "$DIR"
     hyper
     plot
+    ls -al reports/
+    echo -e "$gr1 Reports available at : $DIR"
+    echo -e "Done: 👄"
 }
 
 # Reading commands from com.txt
@@ -27,6 +32,8 @@ COMM2=$(tail -1 com.txt)
 
 # Use the commands
 printf "$gr1
+Execution Time Between
+----------------------
 COMM1: $COMM1
 COMM2: $COMM2
 "
@@ -63,7 +70,7 @@ $nc"
 chk_dir() {
   if [ ! -d "$1" ]; then
     mkdir -p "$1"
-    echo "Directory $1 created."
+    echo "Creating Reports Directory : $1 created..."
   else
     echo "Directory $1 already exists."
   fi

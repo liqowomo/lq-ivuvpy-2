@@ -18,11 +18,13 @@ main() {
 
 hyper() {
     hyperfine \
+    -N \
     --warmup 50 \
     'ls' \
     'eza' \
     --export-json hfrun.json \
-    -N
+    --export-markdown hfrun.md \
+    ./plot
 }
 
 

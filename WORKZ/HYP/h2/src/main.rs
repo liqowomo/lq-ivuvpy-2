@@ -1,10 +1,12 @@
 // main function
 
 mod ban;
+mod cmds;
 
 use ban::*;
+use cmds::*;
 
 fn main() {
-    println!("Hello, world!");
     ut11();
+    func2();
 }

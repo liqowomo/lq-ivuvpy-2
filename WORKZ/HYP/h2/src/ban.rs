@@ -4,7 +4,14 @@ use cfonts::*;
 use yansi::Paint as _;
 
 pub fn ut11() {
-    println!("{}", "ut11".green());
+    println!(
+        "
+----------
+{} 
+----------
+    ",
+        "Hyper Fine Testing".green()
+    );
 }
 
 // Banner function here

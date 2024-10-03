@@ -74,14 +74,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "h2"
-version = "0.1.0"
-dependencies = [
- "cfonts",
- "yansi",
-]
-
-[[package]]
 name = "heck"
 version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -278,6 +270,14 @@ checksum = "21bebf2b7c9e0a515f6e0f8c51dc0f8e4696391e6f1ff30379559f8365fb0df7"
 dependencies = [
  "rustix",
  "windows-sys 0.48.0",
+]
+
+[[package]]
+name = "ts1"
+version = "0.0.1"
+dependencies = [
+ "cfonts",
+ "yansi",
 ]
 
 [[package]]

@@ -14,6 +14,7 @@ NC='\x[0m' # No Color
 
 main() {
     hyper
+    plot
 }
 
 hyper() {
@@ -23,16 +24,15 @@ hyper() {
     'ls' \
     'eza' \
     --export-json hfrun.json \
-    --export-markdown hfrun.md \
-    ./plot
+    --export-markdown hfrun.md 
 }
 
 # Male plot 
 
 plot() {
-    mkdir plots 
-    cp *.json plots
-    
+    ./scr/scripts/plot_histogram.py hfrun.json -o plots/ph1.png
+    ./scr/scripts/plot_progression.py hfrun.json -o plots/ph2.png
+    ./scr/scripts/plot+whister.py hfrun.json -o plots/ph3.png
 }
 
 
